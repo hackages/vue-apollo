@@ -1,0 +1,62 @@
+{
+  "name": "vue-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "test:unit": "vue-cli-service test:unit",
+    "test:e2e": "vue-cli-service test:e2e"
+  },
+  "dependencies": {
+    "apollo-cache-inmemory": "^1.2.5",
+    "apollo-client": "^2.3.5",
+    "apollo-link": "^1.2.2",
+    "apollo-link-context": "^1.0.8",
+    "apollo-link-http": "^1.5.4",
+    "apollo-link-ws": "^1.0.8",
+    "apollo-utilities": "^1.0.17",
+    "graphql": "^0.13.2",
+    "graphql-tag": "^2.9.2",
+    "moment": "^2.22.2",
+    "subscriptions-transport-ws": "^0.9.14",
+    "uniqid": "^5.0.3",
+    "vue": "^2.5.16",
+    "vue-apollo": "^3.0.0-beta.19",
+    "vue-rate-it": "^2.1.0",
+    "vue-router": "^3.0.1",
+    "vue-star-rating": "^1.6.0",
+    "vue-styled-components": "^1.4.0",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.0-beta.15",
+    "@vue/cli-plugin-e2e-cypress": "^3.0.0-beta.15",
+    "@vue/cli-plugin-eslint": "^3.0.0-beta.15",
+    "@vue/cli-plugin-unit-mocha": "^3.0.0-beta.15",
+    "@vue/cli-service": "^3.0.0-beta.15",
+    "@vue/eslint-config-prettier": "^3.0.0-rc.3",
+    "@vue/test-utils": "^1.0.0-beta.16",
+    "chai": "^4.1.2",
+    "lint-staged": "^6.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ],
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "vue-cli-service lint",
+      "git add"
+    ],
+    "*.vue": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}
