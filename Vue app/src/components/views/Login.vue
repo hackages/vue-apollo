@@ -55,13 +55,8 @@ export default {
     async confirm() {
       if (!this.login) {
         try {
-          await this.$apollo.mutate({
-            mutation: createUser,
-            variables: {
-              username: this.username,
-              password: this.password,
-            },
-          })
+          // How is this registering a new user? 🤔
+          console.log('General Kenobi')
         } catch (err) {
           this.snack([err.message || err, 'error'])
         }
@@ -72,8 +67,8 @@ export default {
         } = await this.$apollo.mutate({
           mutation: signInUser,
           variables: {
-            username: this.username,
-            password: this.password,
+            // I'm not sure this data is correct 🤨
+            'hello there': 'general Kenobi',
           },
         })
         this.$store.dispatch('login', payload)
