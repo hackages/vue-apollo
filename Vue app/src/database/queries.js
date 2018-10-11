@@ -105,7 +105,6 @@ export const getLatestCheckIns = gql`
         name
         tagline
         id
-        image_url
       }
       user @skip(if: $onlyBeers) {
         username

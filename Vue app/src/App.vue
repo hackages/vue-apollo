@@ -38,7 +38,7 @@ export default {
         }
       },
       skip() {
-        return !this.$store.state.isLoggedIn && !localStorage.getItem('token')
+        return true
       },
       error() {
         this.snack(['You need to sign in again', 'error'])
