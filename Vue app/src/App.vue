@@ -38,6 +38,7 @@ export default {
         }
       },
       skip() {
+        // Do we really want to skip that request every time?
         return true
       },
       error() {

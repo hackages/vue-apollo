@@ -47,11 +47,9 @@ const queries = {
   }
 };
 
-const INTO_THE_VOID = (...args) => {
-  console.log(...args);
-  return {
-    'hello there': 'general Kenobi'
-  };
+// isn't that a nice, useful function?
+const INTO_THE_VOID = () => {
+  console.log('INTO THE VOID WITH YOU!', ...args);
 };
 
 const mutations = {
@@ -69,6 +67,7 @@ const mutations = {
       { beer, rating, text },
       { dataSources: { dataAPI }, user }
     ) => (user ? INTO_THE_VOID(beer, user, rating, text) : {})
+    // I return an empty object if the user is not logged in
   }
 };
 

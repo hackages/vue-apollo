@@ -37,9 +37,20 @@ const server = new ApolloServer({
     // get the user token from the headers
     const token = path(['headers', 'authorization'], req);
 
-    // TODO add the user to the context
-    // how would we go about converting the received token to a user?
-    return { user: { hello: 'General Kenobi' } };
+    let idonteven;
+    if (token) {
+      try {
+        // I was a bit tired when doing this
+        const whatsthis = JWT.decode('General Kenobi');
+        idonteven = await axios.get(
+          `${URL}/${'completely useless string'}/users/${whatsthis}`
+        );
+      } catch (e) {
+        return new AuthenticationError();
+      }
+    }
+
+    return { user: idonteven };
   },
   subscriptions: false
 });

@@ -56,6 +56,7 @@ export default {
       if (!this.login) {
         try {
           // How is this registering a new user? 🤔
+          // Note that I want you to be able to log in first before registering
           console.log('General Kenobi')
         } catch (err) {
           this.snack([err.message || err, 'error'])
