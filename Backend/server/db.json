@@ -13,7 +13,8 @@
       "createdAt": "2018-07-26T13:06:49.780Z",
       "friends": [
         "fdfmqg1lkpjk9olj8z",
-        "fdfmqg1rg4jkayee1f"
+        "fdfmqg1rg4jkayee1f",
+        "17lnx92nmjldcpwxm"
       ]
     },
     {
@@ -55,7 +56,7 @@
     {
       "id": "9weaj3c3jlhra452",
       "beer": 84,
-      "user": "fdfmqg16a9jk2ko0lr",
+      "user": "fdfmqg1rg4jkayee1f",
       "createdAt": "2018-08-31T08:48:13.429Z",
       "rating": 4,
       "text": "ipsum"
@@ -87,7 +88,7 @@
     {
       "id": "1jdr4248djmunudcc",
       "beer": 129,
-      "user": "fdfmqg16a9jk2ko0lr",
+      "user": "17lnx92nmjldcpwxm",
       "createdAt": "2018-10-04T14:12:42.636Z",
       "rating": 4,
       "text": "consectetur"
@@ -103,7 +104,7 @@
     {
       "id": "1jdr4248djmuog079",
       "beer": 76,
-      "user": "fdfmqg16a9jk2ko0lr",
+      "user": "17lnx92nmjldcpwxm",
       "createdAt": "2018-10-04T14:29:32.037Z",
       "rating": 4,
       "text": "elit"
@@ -114,7 +115,31 @@
       "user": "fdfmqg16a9jk2ko0lr",
       "createdAt": "2018-10-11T08:22:30.148Z",
       "rating": 4,
-      "text": "test"
+      "text": "fusce"
+    },
+    {
+      "id": "2rlkpee5bjnd3a1bl",
+      "beer": 75,
+      "user": "17lnx92nmjldcpwxm",
+      "createdAt": "2018-10-17T11:44:38.960Z",
+      "rating": 3,
+      "text": "efficitur"
+    },
+    {
+      "id": "2rlkpee79jnd3cmml",
+      "beer": 19,
+      "user": "fdfmqg16a9jk2ko0lr",
+      "createdAt": "2018-10-17T11:46:39.884Z",
+      "rating": 4,
+      "text": "interdum"
+    },
+    {
+      "id": "2rlkpee79jnd3cx5g",
+      "beer": 37,
+      "user": "fdfmqg16a9jk2ko0lr",
+      "createdAt": "2018-10-17T11:46:53.524Z",
+      "rating": 5,
+      "text": "tempor"
     }
   ],
   "beers": [
