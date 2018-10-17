@@ -30,7 +30,7 @@ export default {
       fetchPolicy: 'cache-and-network',
       variables() {
         return {
-          limit: this.limit,
+          limit: 6,
           onlyBeers: this.onlyBeers,
         }
       },

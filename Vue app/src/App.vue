@@ -38,7 +38,8 @@ export default {
         }
       },
       skip() {
-        return !this.$store.state.isLoggedIn && !localStorage.getItem('token')
+        // Do we really want to skip that request every time?
+        return true
       },
       error() {
         this.snack(['You need to sign in again', 'error'])

@@ -142,12 +142,10 @@ class DataAPI extends RESTDataSource {
   }
 
   async removeFriend(friendId, ownId) {
+    // at least you can still add friends
     const user = await this.get(`users/${ownId}`);
-    const friends = user.friends || [];
-    return this.patch(`users/${ownId}`, {
-      ...user,
-      friends: friends.filter(fr => fr !== friendId)
-    });
+    console.log(`You won't get rid of me that easily 😈`);
+    return user;
   }
 
   async getFriends(friends) {
