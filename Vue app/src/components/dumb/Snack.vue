@@ -1,16 +1,18 @@
 <template>
-    <snack>  
-        <snack-content >
-          <h4>{{ snack.type }}</h4>
-          <p>{{ snack.message }}</p>
-        </snack-content>
-        <snack-dismiss class="dismiss" @click="clearSnack(snack.id)" >DISMISS</snack-dismiss>
-        <snack-loader :duration="duration" >
-            <div >
-              {{' '}}
-            </div>
-        </snack-loader>
-    </snack>
+  <snack>  
+    <snack-content >
+      <h4>{{ snack.type }}</h4>
+      <p>{{ snack.message }}</p>
+    </snack-content>
+    <snack-dismiss 
+      class="dismiss" 
+      @click="clearSnack(snack.id)" >DISMISS</snack-dismiss>
+    <snack-loader :duration="duration" >
+      <div >
+        {{ ' ' }}
+      </div>
+    </snack-loader>
+  </snack>
 </template>
 
 <script>
@@ -34,14 +36,14 @@ export default {
       required: true,
     },
   },
-  methods: {
-    clearSnack(id) {
-      this.$store.commit('clearSnack', id)
-    },
-  },
   computed: {
     duration() {
       return SNACK_LIFETIME + 0.5
+    },
+  },
+  methods: {
+    clearSnack(id) {
+      this.$store.commit('clearSnack', id)
     },
   },
 }

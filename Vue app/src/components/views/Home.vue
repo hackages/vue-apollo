@@ -1,13 +1,13 @@
 <template>
-    <home-container>
-        <home-button-container>
-            <h1>Welcome on HackBeer ! </h1>
+  <home-container>
+    <home-button-container>
+      <h1>Welcome on HackBeer ! </h1>
 
-            <router-link :to="{ name: 'login', params: { login: true } }" >Sign In</router-link>
-            <router-link to="/login">Register</router-link>
-        </home-button-container>
-        <last-beers />
-    </home-container>
+      <router-link :to="{ name: 'login', params: { login: true } }" >Sign In</router-link>
+      <router-link to="/login">Register</router-link>
+    </home-button-container>
+    <last-beers />
+  </home-container>
 </template>
 
 <script>

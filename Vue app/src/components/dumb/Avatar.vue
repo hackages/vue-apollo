@@ -1,13 +1,18 @@
 <template>
-    <router-link :to="`/user/${id}`" >
-        <avatar-box :big="big" v-avatar="id" ></avatar-box>
-    </router-link>
+  <router-link :to="`/user/${id}`" >
+    <avatar-box 
+      v-avatar="id" 
+      :big="big" />
+  </router-link>
 </template>
 
 <script>
 import { AvatarBox } from '../styled/globalStyles'
 export default {
   name: 'Avatar',
+  components: {
+    AvatarBox,
+  },
   props: {
     id: {
       type: String,
@@ -17,9 +22,6 @@ export default {
       type: Boolean,
       default: false,
     },
-  },
-  components: {
-    AvatarBox,
   },
 }
 </script>

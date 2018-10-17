@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <navbar v-if="showNav" @logout="logout()" />
+    <navbar 
+      v-if="showNav" 
+      @logout="logout()" />
     <keep-alive>
       <router-view/>
     </keep-alive>

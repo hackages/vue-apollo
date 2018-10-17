@@ -1,9 +1,13 @@
 <template>
-    <beers-container>
-      <beer-provider v-for="num in 6" :key="num">
-        <beer-item slot-scope="slotProps" :beer="slotProps.beer" />
-      </beer-provider>
-    </beers-container>
+  <beers-container>
+    <beer-provider 
+      v-for="num in 6" 
+      :key="num">
+      <beer-item 
+        slot-scope="slotProps" 
+        :beer="slotProps.beer" />
+    </beer-provider>
+  </beers-container>
 </template>
 
 <script>

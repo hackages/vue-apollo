@@ -1,11 +1,13 @@
 <template>
-    <snacks >
-        <transition-group name="list" >
-          <li v-for="snack in snacks" :key="snack.id" >
-            <snack :snack="snack" />
-          </li>
-        </transition-group>
-    </snacks>
+  <snacks >
+    <transition-group name="list" >
+      <li 
+        v-for="snack in snacks" 
+        :key="snack.id" >
+        <snack :snack="snack" />
+      </li>
+    </transition-group>
+  </snacks>
 </template>
 
 <script>

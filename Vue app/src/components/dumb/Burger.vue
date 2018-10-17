@@ -1,11 +1,11 @@
 <template>
-    <burger-container @click="$emit('toggle')">
-            <burger >
-                <burger-line-right :open="opened"/>
-                <burger-line-middle :open="opened"/>
-                <burger-line-left :open="opened"/>
-            </burger>
-        </burger-container>
+  <burger-container @click="$emit('toggle')">
+    <burger >
+      <burger-line-right :open="opened"/>
+      <burger-line-middle :open="opened"/>
+      <burger-line-left :open="opened"/>
+    </burger>
+  </burger-container>
 </template>
 
 <script>

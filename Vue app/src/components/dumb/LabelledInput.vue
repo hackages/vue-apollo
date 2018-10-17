@@ -1,16 +1,18 @@
 <template>
-    <input-container>
-        <styled-label :focus="isfocus" :for="id">{{ label }}</styled-label>
-        <styled-input
-                :focus="isfocus"
-                @focus.native="toggleFocus($event)"
-                @blur.native="toggleFocus($event)"
-                v-bind:value="value"
-                v-on:input="$emit('input',$event)"
-                :id="id"
-                :type="type"
-        />
-    </input-container>
+  <input-container>
+    <styled-label 
+      :focus="isfocus" 
+      :for="id">{{ label }}</styled-label>
+    <styled-input
+      :focus="isfocus"
+      :value="value"
+      :id="id"
+      :type="type"
+      @focus.native="toggleFocus($event)"
+      @blur.native="toggleFocus($event)"
+      @input="$emit('input',$event)"
+    />
+  </input-container>
 </template>
 
 <script>
@@ -27,7 +29,24 @@ export default {
     StyledInput,
     StyledLabel,
   },
-  props: ['id', 'value', 'type', 'label'],
+  props: {
+    id: {
+      type: String,
+      default: '',
+    },
+    value: {
+      type: String,
+      required: true,
+    },
+    type: {
+      type: String,
+      default: 'text',
+    },
+    label: {
+      type: String,
+      default: '',
+    },
+  },
   data() {
     return {
       isfocus: false,

@@ -17,7 +17,9 @@ export default {
   ) {
     return (
       <BeersContainer>
-        {beers.map(beer => <BeerItem beer={beer} />)}
+        {beers.map(beer => (
+          <BeerItem beer={beer} />
+        ))}
       </BeersContainer>
     )
   },

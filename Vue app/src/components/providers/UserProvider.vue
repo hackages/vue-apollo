@@ -1,8 +1,7 @@
 <template>
-    <div>
-        <slot :user="user" >
-        </slot>
-    </div>
+  <div>
+    <slot :user="user" />
+  </div>
 </template>
 
 <script>

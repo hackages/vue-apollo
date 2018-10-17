@@ -1,11 +1,13 @@
 <template>
-        <checkins-provider :onlyBeers="true" :limit="12" >
-            <template slot-scope="slotProps">
-                <padding-container>
-                    <display-beers :beers="slotProps.beers" />
-                </padding-container>
-            </template>
-        </checkins-provider>
+  <checkins-provider 
+    :only-beers="true" 
+    :limit="12" >
+    <template slot-scope="slotProps">
+      <padding-container>
+        <display-beers :beers="slotProps.beers" />
+      </padding-container>
+    </template>
+  </checkins-provider>
 </template>
 
 <script>

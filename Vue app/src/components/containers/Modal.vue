@@ -1,5 +1,5 @@
 <template>
-    <transition name="modal">
+  <transition name="modal">
     <styled-modal>
       <div class="modal-wrapper">
         <div class="modal-container">
@@ -18,10 +18,14 @@
 
           <div class="modal-footer">
             <slot name="footer">
-              <button class="modal-default-button button-close" @click="$emit('close')">
+              <button 
+                class="modal-default-button button-close" 
+                @click="$emit('close')">
                 cancel
               </button>
-              <button class="modal-default-button button-submit" @click="$emit('submit')">
+              <button 
+                class="modal-default-button button-submit" 
+                @click="$emit('submit')">
                 submit
               </button>
             </slot>

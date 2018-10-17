@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <slot :checkins="userFeed" />
-    </div>
+  <div>
+    <slot :checkins="userFeed" />
+  </div>
 </template>
 
 <script>
@@ -9,6 +9,13 @@ import { getUserFeed, checkinSubscription } from '../../database/queries.js'
 import { mapActions } from 'vuex'
 
 export default {
+  props: {
+    limit: {
+      type: Number,
+      required: false,
+      default: 18,
+    },
+  },
   data() {
     return {
       userFeed: [],
@@ -49,13 +56,6 @@ export default {
           this.snack([err.message || err, 'error'])
         },
       },
-    },
-  },
-  props: {
-    limit: {
-      type: Number,
-      required: false,
-      default: 18,
     },
   },
 }

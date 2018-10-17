@@ -1,8 +1,12 @@
 <template>
-    <div>
-        <slot v-if="onlyBeers" :beers="beers"  />
-        <slot v-else :checkins="checkins" />
-    </div>
+  <div>
+    <slot 
+      v-if="onlyBeers" 
+      :beers="beers" />
+    <slot 
+      v-else 
+      :checkins="checkins" />
+  </div>
 </template>
 
 <script>
@@ -16,10 +20,27 @@ import { mapActions } from 'vuex'
 const dropTail = dropLast(1)
 
 export default {
+  props: {
+    limit: {
+      type: Number,
+      required: false,
+      default: Number.MAX_SAFE_INTEGER,
+    },
+    onlyBeers: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
+  },
   data() {
     return {
       checkins: [],
     }
+  },
+  computed: {
+    beers() {
+      return map(prop('beer'))(this.checkins)
+    },
   },
   methods: {
     ...mapActions(['snack']),
@@ -58,23 +79,6 @@ export default {
           this.snack([err.message || err, 'error'])
         },
       },
-    },
-  },
-  computed: {
-    beers() {
-      return map(prop('beer'))(this.checkins)
-    },
-  },
-  props: {
-    limit: {
-      type: Number,
-      required: false,
-      default: Number.MAX_SAFE_INTEGER,
-    },
-    onlyBeers: {
-      type: Boolean,
-      required: false,
-      default: false,
     },
   },
 }

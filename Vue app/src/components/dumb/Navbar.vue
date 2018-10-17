@@ -1,14 +1,18 @@
 <template>
-    <navbar-container v-if="$route.path !== '/'" id="nav">
-        <burger :opened="opened" @toggle="toggleOpened()" />
-      <flex-row :open="opened" >
-          <router-link to="/feed">Home</router-link>
-          <router-link :to="`/user/${userInfo.id}`">Profile</router-link>
-      </flex-row>
-        <flex-row :open="opened" >
-            <link-styled-button @click="$emit('logout')" >Log out</link-styled-button>
-        </flex-row>
-    </navbar-container>
+  <navbar-container 
+    v-if="$route.path !== '/'" 
+    id="nav">
+    <burger 
+      :opened="opened" 
+      @toggle="toggleOpened()" />
+    <flex-row :open="opened" >
+      <router-link to="/feed">Home</router-link>
+      <router-link :to="`/user/${userInfo.id}`">Profile</router-link>
+    </flex-row>
+    <flex-row :open="opened" >
+      <link-styled-button @click="$emit('logout')" >Log out</link-styled-button>
+    </flex-row>
+  </navbar-container>
 </template>
 
 <script>

@@ -1,8 +1,7 @@
 <template>
-    <div>
-        <slot :beer="beer" >
-        </slot>
-    </div>
+  <div>
+    <slot :beer="beer" />
+  </div>
 </template>
 
 <script>

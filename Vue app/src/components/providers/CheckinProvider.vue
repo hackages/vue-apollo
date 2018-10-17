@@ -1,8 +1,7 @@
 <template>
-    <div>
-        <slot :checkin="checkin" >
-        </slot>
-    </div>
+  <div>
+    <slot :checkin="checkin" />
+  </div>
 </template>
 
 <script>

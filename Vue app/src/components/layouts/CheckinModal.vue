@@ -1,14 +1,22 @@
 <template>
-    <modal  @close="$emit('close')"  @submit="checkin" >
-        <h3 slot="header">You're going to check in to {{beer.name}}</h3>
-        <div slot="body">
-            <styled-form @submit="checkin">
-                <label for="textarea">Write something :</label>
-                <textarea id="textarea" v-model="text" ></textarea>
-                <image-rating :src="beerCap" v-model="rating" :item-size="56" :show-rating="false" />
-            </styled-form>
-        </div>
-    </modal>
+  <modal 
+    @close="$emit('close')" 
+    @submit="checkin" >
+    <h3 slot="header">You're going to check in to {{ beer.name }}</h3>
+    <div slot="body">
+      <styled-form @submit="checkin">
+        <label for="textarea">Write something :</label>
+        <textarea 
+          id="textarea" 
+          v-model="text" />
+        <image-rating 
+          :src="beerCap" 
+          v-model="rating" 
+          :item-size="56" 
+          :show-rating="false" />
+      </styled-form>
+    </div>
+  </modal>
 </template>
 
 <script>
@@ -21,6 +29,11 @@ import Modal from '../containers/Modal.vue'
 import { updateBeerCacheWithCheckin } from '../../utils.js'
 
 export default {
+  components: {
+    Modal,
+    StyledForm,
+    ImageRating,
+  },
   props: {
     beer: {
       type: Object,
@@ -30,11 +43,6 @@ export default {
       type: Boolean,
       default: false,
     },
-  },
-  components: {
-    Modal,
-    StyledForm,
-    ImageRating,
   },
   data() {
     return {

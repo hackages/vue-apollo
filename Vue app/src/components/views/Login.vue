@@ -1,18 +1,26 @@
 <template>
   <login-container>
-    <white-title class='mv3'>{{login ? 'Login' : 'Sign Up'}}</white-title>
+    <white-title class="mv3">{{ login ? 'Login' : 'Sign Up' }}</white-title>
     <column>
-      <labelled-input label="Your username" type="text" :id="'username'" v-model="username" />
-      <labelled-input label="You password" type="password" :id="'password'" v-model="password" />
+      <labelled-input 
+        :id="'username'" 
+        v-model="username" 
+        label="Your username" 
+        type="text" />
+      <labelled-input 
+        :id="'password'" 
+        v-model="password" 
+        label="You password" 
+        type="password" />
       <login-button
-              class='pointer mr2 button'
-              @click="confirm()">
-          {{login ? 'login' : 'create account'}}
+        class="pointer mr2 button"
+        @click="confirm()">
+        {{ login ? 'login' : 'create account' }}
       </login-button>
       <link-button
-              class='pointer button'
-              @click="login = !login">
-          {{login ? 'need to create an account?' : 'already have an account?'}}
+        class="pointer button"
+        @click="login = !login">
+        {{ login ? 'need to create an account?' : 'already have an account?' }}
       </link-button>
     </column>
   </login-container>
