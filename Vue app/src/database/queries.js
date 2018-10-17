@@ -22,6 +22,7 @@ export const getBeer = gql`
           name
           id
           average
+          image_url
         }
         rating
         createdAt
