@@ -18,12 +18,17 @@ import { mapActions } from 'vuex'
 import HackBeer from '../../assets/img/hackbeer.svg'
 import { StyledForm } from '../styled/globalStyles.js'
 import Modal from '../containers/Modal.vue'
+import { updateBeerCacheWithCheckin } from '../../utils.js'
 
 export default {
   props: {
     beer: {
       type: Object,
       required: true,
+    },
+    updateAfterCheckin: {
+      type: Boolean,
+      default: false,
     },
   },
   components: {
@@ -50,14 +55,22 @@ export default {
         await this.$apollo.mutate({
           mutation: checkIn,
           variables: info,
+          update: (store, { data: { createCheckin } }) => {
+            this.updateAfterCheckin &&
+              updateBeerCacheWithCheckin(
+                store,
+                this.beer.id.toString(),
+                createCheckin
+              )
+          },
         })
-        this.$emit('close')
+        this.snack([`Checked in to ${this.beer.name}`, 'success'])
         this.rating = 0
         this.text = ''
       } catch (err) {
         this.snack([`Error checkin in to ${this.beer.name}`, 'error'])
       }
-      this.snack([`Checked in to ${this.beer.name}`, 'success'])
+      this.$emit('close')
     },
   },
 }

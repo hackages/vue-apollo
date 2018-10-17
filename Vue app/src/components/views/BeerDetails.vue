@@ -57,7 +57,7 @@
                 </div>
 
                 <template v-if="showModal" >
-                  <checkin-modal :beer="beer" @close="showModal = false" />
+                  <checkin-modal :updateAfterCheckin="true" :beer="beer" @close="showModal = false" />
                 </template>
 
             </template>
@@ -68,8 +68,6 @@
 <script>
 import BeerProvider from '../providers/BeerProvider'
 import CheckinItem from '../dumb/CheckinItem'
-import { checkIn } from '../../database/queries.js'
-import { mapActions } from 'vuex'
 import {
   ImageContainer,
   ProfileHeader,
@@ -111,29 +109,6 @@ export default {
     StyledButton,
     Column,
     Row,
-  },
-  methods: {
-    ...mapActions(['snack']),
-    async checkin() {
-      const info = {
-        beer: this.id,
-        rating: this.rating,
-        text: this.text,
-      }
-
-      try {
-        await this.$apollo.mutate({
-          mutation: checkIn,
-          variables: info,
-        })
-        this.snack([`Checked in to ${this.beer.name}`, 'success'])
-        this.showModal = false
-        this.rating = 0
-        this.text = ''
-      } catch (err) {
-        this.snack([err.message || err, 'error'])
-      }
-    },
     CheckinModal: () => import('../layouts/CheckinModal'),
   },
 }

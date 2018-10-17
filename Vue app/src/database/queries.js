@@ -179,7 +179,23 @@ export const unfollow = gql`
 export const checkIn = gql`
   mutation CheckInMutation($beer: Int!, $rating: Float, $text: String) {
     createCheckin(beer: $beer, rating: $rating, text: $text) {
+      beer {
+        name
+        tagline
+        average
+        abv
+        ibu
+        image_url
+        id
+      }
+      user {
+        id
+        username
+      }
       id
+      createdAt
+      rating
+      text
     }
   }
 `
