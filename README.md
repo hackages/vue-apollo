@@ -8,19 +8,21 @@
 
 - If you want to test graphQL queries without the need to use the frontend, simply go to http://localhost:4000/graphql
 
+- As a general rule, code that is intentionally broken will be right next to a nice comment.
+
 ## Understanding the data
 
 - First, take a look at the schema in /Backend/server/schema.js to grasp the relationship between entities.
-  Once you do that, head to your browser where the frontend runs. On that page we want to display the beers from the latest check ins, but the images are not displaying 🤔.
+  Once you do that, head to your browser where the frontend runs. On that page we want to display the beers _from the latest check ins_, but the images are not displaying 🤔.
   To fix this, maybe take a look at /Vue app/src/database/queries.js.
 
-- What's more, I passed a prop to the LastBeers component telling I want to show 12 beers but only 6 are displayed 😔. Maybe check out CheckinsProvider?
+- What's more, I passed a prop to the LastBeers component telling I want to show 12 beers but only 6 are displayed 😔. I'd go check out CheckinsProvider.
 
 ## Enable the user to sign in (and make use of the context)
 
 - Before we'll be able to register you as a new user, we'll make sure you can sign in. Using the username and password 'Anthony' should log you in... unless something is wrong in the Login component 🤭.
 
-- Some queries on the backend rely on the context to work. They need to prefetch the currently logged in user before doing anything else, but it seems that part is not working well... (The context is done on the backend during the config of the server).
+- Some queries on the backend rely on the context to work. They need to prefetch the currently logged in user before doing anything else, but it seems that part is not working well... Perhaps I had one beer too many when writing it 😇 (The context is done on the backend during the config of the server).
 
 - This is good and all, but you'll notice that every refresh will log you out. Kind of a bummer after I went to the trouble of saving the user token in localStorage 😕
 

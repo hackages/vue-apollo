@@ -36,7 +36,8 @@ export default {
       },
       subscribeToMore: {
         document: checkinSubscription,
-        updateQuery(_) {
+        updateQuery(_, __) {
+          // where did my feed go? 😥
           console.log('hello there')
         },
         variables() {
