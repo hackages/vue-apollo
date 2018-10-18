@@ -83,7 +83,7 @@ export default {
         this.$store.dispatch('login', payload)
         this.$router.push('/feed')
         this.snack([
-          `Welcome ${this.login && 'back '} ${this.username}`,
+          `Welcome ${this.login ? 'back' : 'to Hackbeer'} ${this.username}`,
           'success',
         ])
       } catch (err) {
