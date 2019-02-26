@@ -3,6 +3,7 @@ import App from './App.vue'
 import { router } from './router'
 import { ApolloClient } from 'apollo-client'
 import { HttpLink } from 'apollo-link-http'
+import { onError } from 'apollo-link-error'
 import VueApollo from 'vue-apollo'
 import { setContext } from 'apollo-link-context'
 import { ApolloLink, split } from 'apollo-link'
@@ -48,9 +49,13 @@ const queryLink = split(
   httpLink
 )
 
+const errorLink = onError(({ graphQLErrors }) => {
+  if (graphQLErrors) graphQLErrors.map(({ message }) => console.log(message))
+})
+
 const apolloClient = new ApolloClient({
   cache,
-  link: ApolloLink.from([stateLink, authLink, queryLink]),
+  link: ApolloLink.from([errorLink,stateLink, authLink, queryLink]),
   connectToDevTools: true,
 })
 
